@@ -22,7 +22,7 @@ import { cursorTooltipBaseTheme, tooltipField } from "./tooltip"
 function Editor() {
     const { users, currentUser } = useAppContext()
     const { activeFile, setActiveFile } = useFileSystem()
-    const { theme, language, fontSize } = useSettings()
+    const {  language, fontSize } = useSettings()
     const { socket } = useSocket()
     const { viewHeight } = useResponsive()
     const [timeOut, setTimeOut] = useState(setTimeout(() => {}, 0))
