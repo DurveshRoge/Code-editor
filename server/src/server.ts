@@ -17,6 +17,10 @@ app.use(cors())
 
 app.use(express.static(path.join(__dirname, "public"))) // Serve static files
 
+app.get("/",(req,res)=>{
+	res.send("Working Backend")
+})
+
 const server = http.createServer(app)
 const io = new Server(server, {
 	cors: {
