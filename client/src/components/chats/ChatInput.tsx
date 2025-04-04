@@ -49,7 +49,7 @@ function ChatInput() {
                 type="submit"
             >
                 <LuSendHorizontal size={24} />
-            </button>
+                </button>
         </form>
     )
 }

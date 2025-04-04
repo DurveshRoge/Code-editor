@@ -14,16 +14,23 @@ function UsersView() {
     const { setStatus } = useAppContext()
     const { socket } = useSocket()
 
+
+    
     const copyURL = async () => {
-        const url = window.location.href
+        const url = window.location.href;
+        const lastSegment = url.split("/").pop() ?? ""; // Ensure it's not undefined
+        const id = lastSegment.split("--")[0] || ""; // Ensure it's a valid string
+    
         try {
-            await navigator.clipboard.writeText(url)
-            toast.success("URL copied to clipboard")
+            await navigator.clipboard.writeText(id);
+            toast.success("ID copied to clipboard");
         } catch (error) {
-            toast.error("Unable to copy URL to clipboard")
-            console.log(error)
+            toast.error("Unable to copy ID to clipboard");
+            console.error(error);
         }
-    }
+    };
+    
+    
 
 
 
