@@ -24,8 +24,13 @@ app.use(cors(corsOptions))
 app.use(express.static(path.join(__dirname, "public"))) // Serve static files
 
 app.get("/",(req,res)=>{
-	res.send("Working Backend")
+	res.status(200).send("Working Backend")
 })
+
+app.get('/ping', (req, res) => {
+  res.status(200).send('OK');
+});
+
 
 const server = http.createServer(app)
 const io = new Server(server, {
